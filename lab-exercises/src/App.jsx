@@ -4,21 +4,25 @@ import viteLogo from '/vite.svg'
 import './App.css'
 import BitcoinRates from './components/BitcoinRates/BitcoinRates'
 import EmojiChanger, { EmojiProvider } from './Context/EmojiContext'
-import MyThemeProvider from './Context/MyThemeContext'
+// import MyThemeProvider from './Context/MyThemeContext'
 import AppRoutes from './routes/AppRoutes'
 import NavBar from './components/NavBar/NavBar'
+
+import { ThemeProvider} from '@mui/material/styles'
+import { tealThemes } from './components/Themes/tealThemes.jsx'
+
 
 function App() {
 
 
   return (
     <>
-  
-    <MyThemeProvider>
+    
+    <ThemeProvider theme={tealThemes}>
       <NavBar/>
       <AppRoutes/>
-    </MyThemeProvider>
-    
+    </ThemeProvider>
+
     </>
   )
 }
